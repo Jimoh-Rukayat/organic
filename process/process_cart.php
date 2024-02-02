@@ -2,17 +2,19 @@
 session_start();
 error_reporting(E_ALL);
 require_once "../classes/Cart.php";
+require_once "../classes/Product.php";
 
 $cart = new Cart();
 
  if(isset($_POST["add2cart"]) && isset($_SESSION["user_id"])){
-    $prod_image = $_POST["prod_image"];
-    $prod_name = $_POST["prod_name"];
-    $prod_amt = $_POST["prod_amt"];
-    $prod_qty = 1;
+
     $prod_id = $_POST["add2cart"];
+    $prod =  $product->get_single_product($prod_id);
     $user_id = $_SESSION["user_id"];
-    
+    $prod_image = $prod["prod_image"];
+    $prod_name = $prod["prod_name"];
+    $prod_qty = 1;
+    $prod_amt = $prod["prod_amount"];
     
     $res = $cart->get_cart_items($prod_id, $user_id);
     if($res){

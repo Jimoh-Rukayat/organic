@@ -40,8 +40,6 @@ session_start();
                            </thead>
                            <tbody>";
                       foreach($carts as $cart){   
-                        print_r($cart);
-                        die();
               ?>
            <tr class="product-data">
                     <td><img src="uploads/<?php echo $cart["prod_image"]?>" alt="" width="100" class="rounded"></td>

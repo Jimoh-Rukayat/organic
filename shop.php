@@ -42,23 +42,15 @@
             ?>  
                <div class="col-md-3 card-shadow product-data p-5">
                    <a href="single_product.php?id=<?php echo $prod['prod_id']?>" style="color:black; text-decoration:none">           
-                        <div>
-                            <img src="uploads/<?php echo $prod['prod_image']?>" alt="<?php echo $prod['prod_name']?>" id="prod_image" style="height:200px; width:200px" class="image-fluid mt-5">
-                        
-                        </div>
+                        <img src="uploads/<?php echo $prod['prod_image']?>" alt="<?php echo $prod['prod_name']?>" id="prod_image" style="height:200px; width:200px" class="image-fluid mt-5">
                         <hr width="200" style="border: 2px solid red;" class="mt-4">
                         <p class="px-4" id="prod_name"><?php echo $prod['prod_name']?></p>
                         <p id="prod_amt" class="px-4">&#8358;<?php echo number_format($prod['prod_amount'], 2)?>/kg</p>
-                        <button class="btn btn-success btn-sm mx-4 add2cart" name="add2cart" value="<?php echo $prod['prod_id']?>">
+                        <button class="btn btn-success btn-sm mx-4 add2cart" name="add2cart"  onclick="alert(<?php echo $prod['prod_id']?>)" value="<?php echo $prod['prod_id']?>">
                             <i class="fa fa-shopping-cart me-2"></i>Add to Cart
                         </button>
                     </a>
                </div>
-               <input type="hidden" name="prod_image" value="<?php echo $prod['prod_image']?>" id="prod_id">
-                <input type="hidden" name="prod_name" value="<?php echo $prod['prod_name']?>">
-                <input type="hidden" name="prod_amt" value="<?php echo $prod['prod_amount']?>">
-                <input type="hidden" name="prod_id" value="<?php echo $prod['prod_id']?>">
-                <input type="hidden" name="user_id" value="<?php echo $prod['user_id']?>">
             <?php        
                }
             ?> 

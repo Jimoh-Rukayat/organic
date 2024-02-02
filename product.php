@@ -81,12 +81,6 @@
                         }
                     ?>
                 </div>
-                <input type="hidden" name="user_id" value="<?php echo $prod['user_id']?>">
-                <input type="hidden" name="prod_image" value="<?php echo $prod['prod_image']?>" id="prod_id">
-                <input type="hidden" name="prod_name" value="<?php echo $prod['prod_name']?>" >
-                <input type="hidden" name="prod_amt"  value="<?php echo $prod['prod_amount']?>" >
-                <input type="hidden" name="id" class="prod_id" value='<?php echo $prod["prod_id"]?>'>
-                <input type="hidden" class="new-qty" value='<?php echo $prod["prod_id"]?>'>
             </div>
         </form>
   <?php
