@@ -1,5 +1,30 @@
 
 $(document).ready(function(){
+    //Increment btn
+
+   $("#increment-btn").click(function(){
+        var qty = $(".qty-input").val();
+        var value = Number(qty);
+        value = isNaN(value) ? 0 : value;
+        if(value <10){
+        value++;
+        $(".qty-input").val(value);
+        }
+        
+    })
+    
+    //Decrement btn
+    $("#decrement-btn").click(function(){
+        var qty = $(".qty-input").val();
+        var value = Number(qty);
+        value = isNaN(value) ? 0 : value;
+        if(value > 1){
+         value--;
+         $(".qty-input").val(value);
+        }
+    })
+    
+    
 
     // Add to cart
     $('.add2cart').click(function(){
@@ -43,13 +68,6 @@ $(document).ready(function(){
         });
     });
    
-    
-    // For state LGA
-    $("#location").change(function(){
-        var data = "stateid=" + $(this).val();
-       $("#lga").load("process/process_lga.php", data);
-     })
-
     
 });
 

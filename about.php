@@ -32,7 +32,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="sub-about mt-5 d-lg-flex flex-lg-row">
+                <div class="sub-about mt-5 d-lg-flex flex-lg-row justify-content-between">
                     <div class="col-md-4">
                         <img src="assets/images/girl.JPG" alt="girl" width="600" height="550" class="d-none d-lg-block">
                     </div>
@@ -49,7 +49,7 @@
                                 <img src="assets/images/hell.jpg" alt="" width="300" height="300">
                                 <ul>
                                     <li class="text-success"><p class="col">Healthy Journey</p></li>
-                                    <p class="d-none d-lg-block">Clean and fresh agro-services with low-cost</p>
+                                    <p class="d-none d-lg-block">Clean and fresh products</p>
                                 </ul>
                             </div>
                         </div>
@@ -123,26 +123,25 @@
                         <h5 class="mt-5 text-success">Marie Curie</h5>
                         <p class="p-3">The quality of Tfarms produce is unmatched. The vegetables are bursting with flavor, the fruits are incredibly juicy.
                             It's a game-changer in the kitchen, allowing me to create dishes that are not only delicious but also incredivly
-                            healthy.
+                            healthy. <br>
+                            <i class="fa fa-star text-success"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                         </p>
-                        <i class="fa fa-star text-success"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                   
                     </div>
                     <div class="curie mx-3 col-3">
                         <h5 class="mt-5 text-success">Perie Curie</h5>
                         <p class="p-3">The quality of Tfarms produce is unmatched. The vegetables are bursting with flavor, the fruits are incredibly juicy.
                             It's a game-changer in the kitchen, allowing me to create dishes that are not only delicious but also incredivly
-                            healthy.
+                            healthy. <br>
+                            <i class="fa fa-star text-success"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                         </p>
-                        <i class="fa fa-star text-success"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                     </div>
                     <div class="curie col-3">
                         <h5 class="mt-5 text-success">Marie Curie</h5>
                         <p class="p-3">The quality of Tfarms produce is unmatched. The vegetables are bursting with flavor, the fruits are incredibly juicy.
                             It's a game-changer in the kitchen, allowing me to create dishes that are not only delicious but also incredivly
-                            healthy.
+                            healthy. <br>
+                            <i class="fa fa-star text-success"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                         </p>
-                        <i class="fa fa-star text-success"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                     </div>
                     <div class="curie mx-3 col-3">
                         <h5 class="mt-5 text-success">Perie Curie</h5>

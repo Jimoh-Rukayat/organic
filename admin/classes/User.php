@@ -12,7 +12,7 @@
 
         public function get_all_users(){
             try{
-            $sql = "SELECT * FROM users";
+            $sql = "SELECT * FROM users JOIN orders ON users.user_id = orders.user_id JOIN state ON orders.order_state = state.state_id";
             $stmt = $this->dbconn->prepare($sql);
             $stmt->execute();
             $response = $stmt->fetchAll(PDO::FETCH_ASSOC);

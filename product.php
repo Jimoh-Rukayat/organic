@@ -18,110 +18,77 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col mt-5">
-                <h3 id="vegetables">Vegetables</h3>
-                <table class="table table-stripped mt-5" width="100%">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                             $products = $product->get_products("1");
+        <form action="process/process_cart.php" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col mt-5 d-flex">
+                    <h3 id="vegetables">Vegetables</h3>
+                    <?php
+                            $products = $product->get_products("Vegetables");
                             foreach($products as $prod){
                         ?>
-                            <tr>
-                                <td><img src="uploads/<?php echo $prod["prod_image"]?>" alt="amaranthus" width="100"></td>
-                                <td><?php echo $prod["prod_name"]?></td>
-                                <td><p><?php echo $prod["prod_description"]?></p>
-                                </td>
-                                <td>&#8358;<?php echo $prod["prod_amount"]?></td>
-                                <td><button class="btn btn-dark btn-sm">Edit</button></td>
-                                <td><button class="btn btn-danger btn-sm">Delete</button></td>
-                            </tr>
+                            <div class=" col-md-3 card-shadow m-5 ">
+                                <a href="single_product.php?id=<?php echo $prod['prod_id']?>" style="color:black; text-decoration:none">
+                                    <img src="uploads/<?php echo $prod['prod_image']?>" alt="<?php echo $prod['prod_name']?>" id="prod_image" style="height:200px; width:200px" class="image-fluid mt-3">
+                                    <div class="mt-3 px-4">
+                                        <p id="prod_name"><?php echo $prod['prod_name']?></p>
+                                        <p id="prod_amt">&#8358;<?php echo number_format($prod['prod_amount'], 2)?>/kg</p>
+                                    </div>
+                                </a> 
+                                <button class="btn btn-success btn-sm mx-3" name="add2cart" value="<?php echo $prod['prod_id']?>" ><i class="fa fa-shopping-cart me-3"></i>Add to Cart
+                                </button>                                                                      
+                            </div>        
                         <?php       
-                            }
+                        }
                         ?>
-                    </tbody>
-                </table>
-            </div>
-            <div class="row mt-5">
-                <div class="col">
-                    <h3 id="fruits">Fruits</h3>
-                    <table class="table table-stripped mt-5" width="100%">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                             $products = $product->get_products("2");
-                            foreach($products as $prod){
-                        ?>
-                            <tr>
-                                <td><img src="uploads/<?php echo $prod["prod_image"]?>" alt="amaranthus" width="100"></td>
-                                <td><?php echo $prod["prod_name"]?></td>
-                                <td><p><?php echo $prod["prod_description"]?></p>
-                                </td>
-                                <td>&#8358;<?php echo $prod["prod_amount"]?></td>
-                                <td><button class="btn btn-dark btn-sm">Edit</button></td>
-                                <td><button class="btn btn-danger btn-sm">Delete</button></td>
-                            </tr>
-                        <?php       
-                            }
-                        ?>
-                        </tbody>
-                    </table>
                 </div>
+                <div class="col  mt-5 d-flex">
+                        <h3 id="fruits">Fruits</h3>
+                        <?php
+                            $products = $product->get_products("Fruits");
+                            foreach($products as $prod){
+                        ?>
+                            <div class=" col-md-3 card-shadow m-5 ">
+                                <a href="single_product.php?id=<?php echo $prod['prod_id']?>" style="color:black; text-decoration:none">
+                                    <img src="uploads/<?php echo $prod['prod_image']?>" alt="<?php echo $prod['prod_name']?>" id="prod_image" style="height:200px; width:200px" class="image-fluid mt-3">
+                                    <div class="mt-3 px-4">
+                                        <p id="prod_name"><?php echo $prod['prod_name']?></p>
+                                        <p id="prod_amt">&#8358;<?php echo number_format($prod['prod_amount'], 2)?>/kg</p>
+                                </div>
+                                </a> 
+                                <button class="btn btn-success btn-sm mx-3"  name="add2cart"><i class="fa fa-shopping-cart me-3"></i>Add to Cart</button>                        
+                            </div>        
+                        <?php       
+                        }
+                        ?>
+                </div>
+                <div class="col mt-5 d-flex">
+                    <h3 id="inputs">Farm Inputs</h3>
+                    <?php
+                        $products = $product->get_products("Farm Input");
+                        foreach($products as $prod){
+                    ?>
+                    <div class=" col-md-3 card-shadow m-5 ">
+                            <a href="single_product.php?id=<?php echo $prod['prod_id']?>" style="color:black; text-decoration:none">
+                            <img src="uploads/<?php echo $prod['prod_image']?>" alt="<?php echo $prod['prod_name']?>" id="prod_image" style="height:200px; width:200px" class="image-fluid mt-3">
+                            <div class="mt-3 px-4">
+                                <p id="prod_name"><?php echo $prod['prod_name']?></p>
+                                <p id="prod_amt">&#8358;<?php echo number_format($prod['prod_amount'], 2)?>/kg</p>
+                            </div>
+                            </a>  
+                            <button class="btn btn-success btn-sm mx-3"  name="add2cart"><i class="fa fa-shopping-cart me-3"></i>Add to Cart</button>                                                                      
+                    </div>        
+                    <?php       
+                        }
+                    ?>
+                </div>
+                <input type="hidden" name="user_id" value="<?php echo $prod['user_id']?>">
+                <input type="hidden" name="prod_image" value="<?php echo $prod['prod_image']?>" id="prod_id">
+                <input type="hidden" name="prod_name" value="<?php echo $prod['prod_name']?>" >
+                <input type="hidden" name="prod_amt"  value="<?php echo $prod['prod_amount']?>" >
+                <input type="hidden" name="id" class="prod_id" value='<?php echo $prod["prod_id"]?>'>
+                <input type="hidden" class="new-qty" value='<?php echo $prod["prod_id"]?>'>
             </div>
-
-        </div>
-        <div class="col mt-5">
-            <h3 id="inputs">Farm Inputs</h3>
-            <table class="table table-stripped mt-5" width="100%">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                   <?php
-                      $products = $product->get_products("3");
-                      foreach($products as $prod){
-                    ?>
-                       <tr>
-                          <td><img src="uploads/<?php echo $prod["prod_image"]?>" alt="amaranthus" width="100"></td>
-                          <td><?php echo $prod["prod_name"]?></td>
-                          <td><p><?php echo $prod["prod_description"]?></p>
-                          </td>
-                          <td>&#8358;<?php echo $prod["prod_amount"]?></td>
-                          <td><a href=""><button class="btn btn-dark btn-sm">Edit</button></td></a>
-                          <td><a href="delete.php"><button class="btn btn-danger btn-sm">Delete</button></a></td>
-                        </tr>
-                     <?php       
-                         }
-                    ?>
-                </tbody>
-            </table>
-        </div>
+        </form>
   <?php
         require_once("partials/footer.php");
   ?>

@@ -28,12 +28,12 @@
                                 <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
                                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
                                 <li class="nav-item"><a class="nav-link" href="shop.php">Shop</a></li>
-                                <li class="nav-item"><a href="dashboard.php" class="nav-link">Dashboard</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
                             </ul> 
-                                <form method="" action="" class="d-flex col-2" role="search">
+                                <form method="process/process_search.php" action="get" class="d-flex col-2" role="search">
                                     <div class="input-group">
-                                        <input class="form-control" name="" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                                        <button class="btn btn-success" id="btnNavbarSearch" name=''><i class="fas fa-search"></i></button>
+                                    <input class="form-control" name="" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                                    <button class="btn btn-success" id="btnNavbarSearch" name='search_btn'><i class="fas fa-search"></i></button>
                                     </div>
                                </form>
                                     <a href="cart.php">

@@ -8,18 +8,18 @@
         
         $order = new Order();
         $orders = $order->get_order_details($_SESSION["order_ref_no"]);
-        // print_r($orders);
-        
-    
-
-   
-   
    
 ?>
 
 
 <div class="container  col-md-10 py-5" style="background-color: white;" >
 <p>Pls confirm your payment details below</p>
+    <?php
+        if(isset($_SESSION["errormessage"])){
+            echo $_SESSION["errormessage"] = "<div class= 'alert alert-danger'>" . $_SESSION["errormessage"] . "</div>";
+            unset($_SESSION["errormessage"]);
+        }
+    ?>
 <div class="content">
   <table class="table px-5">
     <tr>
@@ -48,6 +48,9 @@
                <form action="process/process_payment.php" method="post">
                     <input class="btn btn-success noround col-1 mt-3" id="btnconfirm" name="btnconfirm" type="submit" value="Pay Now">
                     <!-- <button class="btn btn-success noround" name="btnconfirm">Pay Now</button> -->
+                    <input type="hidden" name="amount" value="<?php echo $orders['order_total_amount']?>">
+                    <input type="hidden" name="user_id" value="<?php echo $orders['user_id']?>">
+                    <input type="hidden" name="order_id" value="<?php echo $orders['order_id']?>">
                </form> 
             </td>
         

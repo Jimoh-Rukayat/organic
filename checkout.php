@@ -78,8 +78,8 @@ error_reporting(E_ALL);
                 ?>
                     <option value="<?php echo $state["state_id"] ?>"><?php echo $state["state_name"] ?></option>
                  <?php
-                      }
-                          ?>
+                    }
+                  ?>
                     </select>
                   </div>
             <?php

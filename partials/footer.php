@@ -19,23 +19,23 @@
                                 <div>
                                     <h4>Socials</h4>
                                     <div class="" >
-                                        <a href="#"><img src="assets/images/fb.PNG" alt="facebook" width="50" style="border:2px solid green; border-radius:  100px;"></a>
-                                        <a href="#"><img src="assets/images/whatsapp.PNG" alt="whatsapp" width="50" style="border:2px solid green; border-radius:  100px;"></a>
-                                        <a href="#"><img src="assets/images/insta .PNG" alt="instagram" width="50" style="border:2px solid green; border-radius:  100px;"></a>
+                                        <a href="#"><img src="assets/images/fb.PNG" alt="facebook" width="30" style="border:2px solid green; border-radius:  100px;"></a>
+                                        <a href="#"><img src="assets/images/whatsapp.PNG" alt="whatsapp" width="30" style="border:2px solid green; border-radius:  100px;"></a>
+                                        <a href="#"><img src="assets/images/insta .PNG" alt="instagram" width="30" style="border:2px solid green; border-radius:  100px;"></a>
                                     </div>
                                 </div>
                                 <div class="mt-5">
                                     <h4>Contact</h4>
                                     <div>
-                                        <span><i class="fa fa-location-dot"></i>Location</span>
+                                        <span><i class="fa fa-location-dot me-3"></i>Location</span>
                                         <p>123, Ajangbadi Magboro, Ogun State</p>
                                     </div>
                                     <div>
-                                        <span><i class="fa fa-phone"></i>Call us</span>
+                                        <span><i class="fa fa-phone  me-3"></i>Call us</span>
                                         <p>+234(12345678)</p>
                                     </div>
                                     <div>
-                                        <span><i class="fa fa-envelope"></i>Email us</span>
+                                        <span><i class="fa fa-envelope  me-3"></i>Email us</span>
                                         <p>tfarms@gmail.com</p>
                                     </div>
                                </div>
@@ -45,7 +45,7 @@
                         <p class="text-center mt-3">Copyright &copy; Jimoh Rukayat. All Rights Reserved. <?php echo date("Y")?></p>
                     </div>
                 </footer>
-                <a href="shop.php"><button class="btn btn-success buy-now animate__animated animate__pulse animate__infinite">Buy now</button></a>
+                <!-- <a href="shop.php"><button class="btn btn-success buy-now animate__animated animate__pulse animate__infinite">Buy now</button></a> -->
                 <a href="#" class="arrow">Back to top</a>
             </div>
         </div>

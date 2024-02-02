@@ -1,8 +1,9 @@
 <?php
     require_once("classes/Product.php");
 
-    if(isset($_GET["delete"])){
-        $prod_id = $_GET["delete"];
+    if(isset($_POST["delete"])){
+
+        $prod_id = $_POST["del_prod"];
 
         $response = $product->delete_product($prod_id);
         if($response){

@@ -60,9 +60,9 @@ h2{
     color: orangered;
     font-size: 50px;
 }
-p, span{
+/* p, span{
     font-family: mulish2;
-}
+} */
 .background-text h1{
     font-family: mulish;
     font-size: 50px;
@@ -164,7 +164,6 @@ h4{
     
 }
 .prod1{
-    
     background-color: white;
     border: 2px dotted rgba(0, 128, 0, 0.2);
     border-radius: 5px;
@@ -237,14 +236,16 @@ footer{
    align-items: center;
    
 }
+/* .navbar{
+    position: fixed;
+    top: 2px;
+} */
 .navbar ul{
     color: green;
 }
 
 .my-nav{
     background-color: rgba(0, 128, 0, 0.2) !important;
-    position:relative;
-    top: 0px;
     width: 100%;
 }
 .location, .email, .phone{

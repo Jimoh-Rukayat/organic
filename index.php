@@ -96,7 +96,7 @@
                         <img src="assets/images/girl.JPG" alt="girl" width="600" height="600" class="d-none d-lg-block">
                     </div>
                     <div class="about-services col-6 p-5">
-                        <div class="more-about  d-lg-flex flex-lg-row">
+                        <div class="more-about  d-lg-flex flex-lg-row justify-content-around">
                             <div class="col-4">
                                 <img src="assets/images/orange.jpg" alt="veges" width="300" height="300">
                                 <ul>

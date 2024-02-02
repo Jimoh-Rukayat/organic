@@ -57,7 +57,12 @@
                                 <td><?php echo $prod["prod_status"] == "1" ? "Available" : "Not Available"?></td>
                                 <td>&#8358;<?php echo $prod["prod_amount"]?>/kg</td>
                                 <td><a href="edit_prod.php?edit=<?php echo $prod['prod_id']?>"><button class="btn btn-warning btn-sm">Edit</button></a></td>
-                                <td><a href="delete_prod.php?delete=<?php echo $prod['prod_id']?>"><button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this product?');" id="delete">Delete</button></a></td>
+                                <td>
+                                    <form action="delete_prod.php" method="post"  onclick="return confirm('Are you sure you want to delete this product?');">
+                                        <input type="hidden" name="del_prod" value="<?php echo $prod['prod_id']?>">
+                                        <button class="btn btn-danger btn-sm" id="delete" name="delete">Delete</button>     
+                                   </form>
+                                </td>
                             </tr>
                         <?php
                             }

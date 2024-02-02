@@ -54,14 +54,6 @@
                             <input type="password" name="conf_password" id="password" class="form-control form-control-lg" placeholder="Confirm Password" required>
                             <label for="password" >Confirm password</label>
                         </div>
-                        <!-- <div class="form-floating mt-3">
-                            <input type="address" name="address" id="address" class="form-control form-control-lg" placeholder="Location">
-                            <label for="address">Location</label>
-                        </div>
-                        <div class="form-floating mt-3">
-                            <input type="phone" name="phone" id="phone" class="form-control form-control-lg" placeholder="Phone Number">
-                            <label for="phone" >Phone Number</label>
-                        </div> -->
                         <button class="btn btn-success mt-5 col-12" type="submit" name="btn_sign">Create Account & Continue</button>
                         <div class="para mt-3">
                             <p>Already have an account? Login <a href="login.php">here</a></p>

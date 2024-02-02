@@ -39,25 +39,24 @@ session_start();
                              <th>Action</th>
                            </thead>
                            <tbody>";
-                      foreach($carts as $cart){
-                        // echo"<pre>";
-                        // print_r($cart);
-                        // echo "</pre>";
-                        // die();        
+                      foreach($carts as $cart){   
+                        print_r($cart);
+                        die();
               ?>
-                <tr class="product-data">
+           <tr class="product-data">
                     <td><img src="uploads/<?php echo $cart["prod_image"]?>" alt="" width="100" class="rounded"></td>
-                    <input type="hidden" class="prod_id" value="<?php echo $cart['prod_id']?>">
+                    <input type="hidden" class="prod_id" name="prod_id"  value="<?php echo $cart['prod_id']?>">
                     <td><?php echo $cart["prod_name"]?></td>
                     <td>&#8358;<?php echo $cart["prod_amt"]?></td>
                     <input type="hidden" name="prod_amt" class="prod_amt" value="<?php echo $cart['prod_amt']?>">
                     <td>
                         <div>
                           <input type="number" class="form-control bg-white text-center qty-input" min="1" style="width:70px" value="<?php echo $cart["prod_qty"]?>">                 
+                          <input type="hidden" name="prod_qty">
                         </div>
                     </td>
                     <td>&#8358;<?php echo number_format($cart["prod_amt"] * $cart["prod_qty"], 2)?></td>
-                    <input type="hidden" name="" class="total-amount">
+                    <input type="hidden" name="amount" class="total-amount">
                     <td>
                         <form action="del_cart.php" method="post" onsubmit="return confirm('Are you sure you want to remove this product?')">
                             <input type="hidden" name="delete_cart" class="cart_id" value="<?php echo $cart['cart_id']?>">
@@ -67,7 +66,6 @@ session_start();
                         </form>
                     </td>
               </tr>
-
               <?php
                   $grand_total = $grand_total + ($cart["prod_amt"] * $cart["prod_qty"]);
                  }
@@ -81,7 +79,12 @@ session_start();
                <div class="d-lg-flex justify-content-between p-4">
                   <a href="shop.php"><button class="btn btn-success no-round">Continue Shopping</button></a>
                   <h3 class="fs-5">Grand total: <span>&#8358;<?php echo number_format($grand_total, 2)?></span></h3>
-                  <a href="checkout.php"><button class="btn btn-success">Checkout</button></a>
+                  <form action="process/process_order_det.php" method="post">
+                    <a href="checkout.php"><button class="btn btn-success" name="chkout_btn" type="submit">Checkout</button></a>
+                    <input type="hidden" name="prod_id" value="<?php echo $cart['prod_id']?>">
+                    <input type="hidden" name="prod_qty" value="<?php echo $cart["prod_qty"]?>">    
+                    <input type="hidden" name="amount" value="<?php echo $cart['prod_amt']?>">
+                  </form>
                </div>
               <?php
               }else{

@@ -10,30 +10,29 @@
 
         }
 
-      
+        public function get_cart_items($prod_id, $user_id){
+            try {
+                $sql = "SELECT * FROM cart WHERE prod_id = ? AND user_id = ?";
+                $stmt = $this->dbconn->prepare($sql);
+                $stmt->execute([$prod_id, $user_id]);
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $result;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+        }
 
-        public function cart_items($prod_image, $prod_name, $prod_qty, $prod_amt, $user_id, $prod_id){
-           try {
-                $sql = "INSERT INTO cart (prod_image, prod_name, prod_qty, prod_amt, user_id, prod_id) VALUES(?,?,?,?,?,?)";
-                $stmt= $this->dbconn->prepare($sql);
+        public function cart_items($prod_image, $prod_name, $prod_qty, $prod_amt, $user_id, $prod_id) {
+            try {
+                $sql = "INSERT INTO cart(prod_image, prod_name, prod_qty, prod_amt, user_id, prod_id) VALUES(?,?,?,?,?,?)";
+                $stmt = $this->dbconn->prepare($sql);
                 $result = $stmt->execute([$prod_image, $prod_name, $prod_qty, $prod_amt, $user_id, $prod_id]);
-                 return $result;
-           }catch(PDOException $e) {
-            echo $e->getMessage();
-        }
-        }
+                return $result;
 
-       public function get_cart_items($prod_id, $user_id){
-        try {
-            $sql = "SELECT * FROM cart WHERE prod_id = ? AND user_id = ?";
-            $stmt = $this->dbconn->prepare($sql);
-            $stmt->execute([$prod_id, $user_id]);
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-        } catch (PDOException $e) {
-            echo $e->getMessage();
+            }catch (PDOException $e) {
+                echo $e->getMessage();
+            }
         }
-    }
        
        public function fetchAllCartItems($user_id){
         try {

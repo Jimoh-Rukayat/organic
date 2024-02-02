@@ -87,10 +87,10 @@
         }
         
 
-        public function get_products($cat_id){
-            $sql = "SELECT * FROM products WHERE category_id = ?";
+        public function get_products($cat_name){
+            $sql = "SELECT * FROM products JOIN category ON products.category_id = category.cat_id WHERE cat_name = ?";
             $stmt= $this->dbconn->prepare($sql);
-            $stmt->execute([$cat_id]);
+            $stmt->execute([$cat_name]);
             $prod = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $prod;
         }

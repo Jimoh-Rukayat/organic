@@ -25,7 +25,8 @@ session_start();
                         <tr>
                             <th>S/N</th>
                             <th>Category Name</th>
-                            <th>Action</th>        
+                            <th>Edit</th>        
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,8 +36,13 @@ session_start();
                             <tr>
                                 <td><?php echo $cats["cat_id"]?></td>
                                 <td><?php echo $cats["cat_name"]?></td>
-                                <td><a href="edit_cat.php?edit=<?php echo $cats['cat_id']?>"><button class="btn btn-warning mx-2 btn-sm">Edit</button></a>
-                                 <a href="del_cat.php?delete=<?php echo $cats['cat_id']?>"><button class="btn btn-danger btn-sm delete" onclick="return confirm('Are you sure you want to delete this category?');">Delete</button></a></td>
+                                <td><a href="edit_cat.php?edit=<?php echo $cats['cat_id']?>"><button class="btn btn-warning mx-2 btn-sm">Edit</button></a></td>
+                                <td>
+                                    <form action="del_cat.php" method="post" onclick="return confirm('Are you sure you want to delete this category?');">
+                                        <input type='hidden' name="del_cat" value="<?php echo $cats['cat_id']?>">
+                                        <button class="btn btn-danger btn-sm delete" name="delete">Delete</button>
+                                    </form>
+                                </td>    
                             </tr>  
                         <?php
                             }

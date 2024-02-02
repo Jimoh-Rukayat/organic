@@ -4,6 +4,7 @@ session_start();
     require_once "classes/Cart.php";
     require_once("classes/User.php");
     require_once("classes/Payment.php");
+   
 
     if ((isset($_SESSION["user_id"]) && isset($_SESSION["order_ref_no"]))) {
 
@@ -11,7 +12,7 @@ session_start();
          $ref = $_SESSION["order_ref_no"];
          $pay = new Payment();
         $payment = $pay->paystack_verify($ref);
-
+      
     
 }     
         
@@ -24,8 +25,8 @@ session_start();
     </div>
 </div>
     <?php
-         $id = $_SESSION["user_id"];
-         $data = $user->get_user($id);
+         $user_id = ($_SESSION["user_id"]);
+         $data = $user->get_user($user_id);
        
             if (!empty($data)) {
     ?>
@@ -48,7 +49,7 @@ session_start();
                         <td><?php echo $payment->data->reference ?></td>
                         <td><?php echo $payment->data->paid_at ?></td>
                         <td class="text-success"><?php echo $payment->data->status ?></td>
-                        <td class="fw-bold">&#8358;<?php echo number_format($payment->data->amount, 2)?></td>
+                        <td class="fw-bold">&#8358;<?php echo number_format($payment->data->amount / 100, 2)?></td>
                         <td>
                             <?php
                                 if($payment->status == 1){

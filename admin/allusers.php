@@ -10,16 +10,18 @@
 
     $user = new User();
     $users = $user->get_all_users();
-    // print_r($users);
+    // echo "<pre>";
+    //  print_r($users);
+    //  echo "</pre>";
 
    
 
 ?>
             <div class="col-md-10">
-                <h2>All Products</h2>
+                <h2>Customer Details</h2>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="index.php" style="text-decoration: none" class="text-dark">Dashboard</a></li>
-                    <li class="breadcrumb-item active"><a href="addproduct.php">All Users</a></li>
+                    <li class="breadcrumb-item active"><a href="#">All Customers</a></li>
                 </ol>
                 <table class="table table-striped" width="100%" cellpadding="10" cellspacing="1">
                     <thead>
@@ -28,6 +30,9 @@
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
+                            <th>Adderss</th>
+                            <th>State</th>
+                            <th>Phone Number</th>
                             <th>Date Registered</th>
                         </tr>
                     </thead>
@@ -41,10 +46,13 @@
                                 <td><?php echo $u["user_fname"]?></td>
                                 <td><?php echo $u["user_lname"] ?></td>
                                 <td><?php echo $u["user_email"]?></td>
+                                <td><?php echo $u["order_shipping_address"]?></td>
+                                <td><?php echo $u["state_name"]?></td>
+                                <td><?php echo $u["user_phone"]?></td>
                                 <td><?php echo $u["date_reg"]?></td>
                             </tr>
                         <?php
-                            }
+                             }
                         ?>
                     </tbody>
                 </table>
