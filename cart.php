@@ -79,10 +79,7 @@ session_start();
                   <h3 class="fs-5">Grand total: <span>&#8358;<?php echo number_format($grand_total, 2)?></span></h3>
                   <form action="process/process_order_det.php" method="post">
                     <a href="checkout.php"><button class="btn btn-success" name="chkout_btn" type="submit">Checkout</button></a>
-                    <input type="hidden" name="prod_id" value="<?php echo $cart['prod_id']?>">
-                    <input type="hidden" name="prod_qty" value="<?php echo $cart["prod_qty"]?>">    
-                    <input type="hidden" name="amount" value="<?php echo $cart['prod_amt']?>">
-                  </form>
+                 </form>
                </div>
               <?php
               }else{

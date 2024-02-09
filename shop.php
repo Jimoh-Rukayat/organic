@@ -46,7 +46,7 @@
                         <hr width="200" style="border: 2px solid red;" class="mt-4">
                         <p class="px-4" id="prod_name"><?php echo $prod['prod_name']?></p>
                         <p id="prod_amt" class="px-4">&#8358;<?php echo number_format($prod['prod_amount'], 2)?>/kg</p>
-                        <button class="btn btn-success btn-sm mx-4 add2cart" name="add2cart"  onclick="alert(<?php echo $prod['prod_id']?>)" value="<?php echo $prod['prod_id']?>">
+                        <button class="btn btn-success btn-sm mx-4 add2cart" name="add2cart" value="<?php echo $prod['prod_id']?>">
                             <i class="fa fa-shopping-cart me-2"></i>Add to Cart
                         </button>
                     </a>

@@ -83,7 +83,7 @@
             
             return $count;
         } catch (PDOException $e) {
-            error_log("Error fetching cart items count: " . $e->getMessage());
+            $e->getMessage();
             return false;
         }
     }
@@ -95,7 +95,7 @@
             $response = $stmt->execute([$user_id]);
             return $response;
         } catch (PDOException $e) {
-            error_log("Error fetching cart items count: " . $e->getMessage());
+            error_log($e->getMessage());
             return false;
         }
 

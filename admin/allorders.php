@@ -10,10 +10,7 @@
 
     $order = new Order();
     $orders = $order->get_all_orders();
-    // print_r($orders);
-
    
-
 ?>
             <div class="col-md-10">
                 <h2>All Products</h2>

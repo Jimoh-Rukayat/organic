@@ -8,7 +8,7 @@ session_start();
 
     if ((isset($_SESSION["user_id"]) && isset($_SESSION["order_ref_no"]))) {
 
-         $user_id = ($_SESSION["user_id"]);
+        // $user_id = ($_SESSION["user_id"]);
          $ref = $_SESSION["order_ref_no"];
          $pay = new Payment();
         $payment = $pay->paystack_verify($ref);
@@ -25,9 +25,10 @@ session_start();
     </div>
 </div>
     <?php
-         $user_id = ($_SESSION["user_id"]);
-         $data = $user->get_user($user_id);
-       
+        if (isset($_SESSION["user_id"])) {
+            $user_id = $_SESSION["user_id"];
+    
+            $data = $user->get_user($user_id);
             if (!empty($data)) {
     ?>
     <div class="content float-start">
@@ -66,7 +67,7 @@ session_start();
       </div>
 <?php
     }
-   
+}
 ?>
 
 

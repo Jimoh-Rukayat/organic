@@ -24,7 +24,24 @@
             
         }
 
+
+        public function get_order_details(){
+            try {
+                $sql = "SELECT * FROM order_details JOIN orders JOIN products JOIN payment ON order_details.prod_id = products.prod_id AND order_details.order_id = orders.order_id";
+                $stmt = $this->dbconn->prepare($sql);
+                $stmt->execute();
+                $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $response;
+
+            }catch (PDOException $e) {
+                return false;
+            }
+
+        }    
+
      }
+
+       
 
 
 

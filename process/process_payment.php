@@ -30,7 +30,7 @@
                 exit();
               
             }else{
-                $_SESSION["errormessage"] = "Network Error. Payment Failed!";
+                $_SESSION["errormessage"] = "Check your internet connection and try again!";
                 header("location:../confirmation.php");
                 exit();
             }

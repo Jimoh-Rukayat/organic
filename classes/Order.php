@@ -33,18 +33,20 @@
             }
         }
 
-        public function user_order_details($prod_id, $order_amount, $order_qty){
+        public function user_order_details($prod_id, $order_amount, $order_qty, $order_id){
             try {
-                $sql = "INSERT INTO order_details(prod_id, order_amount, order_qty) VALUES(?,?,?)";
+                $sql = "INSERT INTO order_details(prod_id, order_amount, order_qty, order_id) VALUES(?,?,?,?)";
                 $stmt = $this->dbconn->prepare($sql);
-                $response = $stmt->execute([$prod_id, $order_amount, $order_qty]);
+                $response = $stmt->execute([$prod_id, $order_amount, $order_qty, $order_id]);
                 return $response;
-            } catch (PDOEXception $e) {
-               $e->getMessage();
+
+            }catch (PDOException $e) {
+                return false;
             }
-        }
 
-
+        }    
+       
+        
 
 
 
